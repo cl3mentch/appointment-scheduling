@@ -1,7 +1,3 @@
-import ContextProvider from "@/lib/context/reown";
-import { wagmiAdapter } from "@/lib/web3/wagmi/config";
-import { Config, cookieToInitialState } from "wagmi";
-
 interface Props {
   components: Array<
     [
@@ -26,13 +22,7 @@ const Compose = (props: Props) => {
 
 // Combine all your providers here
 const AllProviders = ({ children }: { children: React.ReactNode }) => {
-  const initialState = cookieToInitialState(wagmiAdapter.wagmiConfig as Config);
-
-  return (
-    <Compose components={[[ContextProvider, { initialState: initialState }]]}>
-      {children}
-    </Compose>
-  );
+  return <Compose components={[]}>{children}</Compose>;
 };
 
 export default AllProviders;

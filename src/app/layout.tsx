@@ -13,7 +13,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "RGZ WHITELIST CHECKER",
+  title: "Appointment Booking",
   description: "",
 };
 
@@ -26,27 +26,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "overflow-y-scroll overflow-x-hidden gradientScrollBar min-h-screen bg-background bg-black bg-[url('/img/mobile/background.jpg')] bg-cover xl:bg-[url('/img/background.jpg')] bg-no-repeat relative font-sans antialiased text-white w-full h-[900px] xl:h-full text-md flex flex-col poppins-regular ",
+          "gradientScrollBar min-h-screen bg-background text-black bg-[#F6F6F6]",
           fontSans.variable
         )}
       >
-        <img
-          src="/img/1920x1080.png"
-          className="w-full top-0 right-0 h-full absolute hidden xl:block"
-          alt=""
-        />
-        <img
-          src="/img/mobile/1024 × 1366.gif"
-          className="w-full bottom-0 h-auto absolute xl:hidden z-10 "
-          alt=""
-        />
-        <div className=" bg-[url('/img/mobile/bgframe.png')] xl:bg-none bg-no-repeat bg-[length:100vw_900px] xl:bg-auto flex flex-col ">
-          <AllProviders>
-            <Toaster />
-            <Navbar />
-            {children}
-          </AllProviders>
-        </div>
+        <AllProviders>
+          <Toaster />
+          <Navbar />
+          {children}
+        </AllProviders>
       </body>
     </html>
   );
